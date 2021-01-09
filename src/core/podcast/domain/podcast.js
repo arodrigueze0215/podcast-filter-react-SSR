@@ -1,4 +1,6 @@
 import Uploaded from './value_objects/uploaded_value_object';
+import Description from './value_objects/description_value_object'
+import Duration from './value_objects/duration_value_object'
 export default class Podcast {
     /**
      * this is the Podcast domain object 
@@ -13,8 +15,8 @@ export default class Podcast {
     constructor(id, title, description, duration, picture, url_audio, uploaded_at) {
         this.id = id;
         this.title = title;
-        this.description = description;
-        this.duration = duration;
+        this.description = new Description(description);
+        this.duration = new Duration(duration);
         this.picture = picture;
         this.url_audio = url_audio;
         this.uploaded_at = new Uploaded(uploaded_at)

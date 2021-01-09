@@ -1,4 +1,4 @@
-import PodcastRepository from '../../src/core/podcast/repository/podcast_repository_in_memory'
+import PodcastRepository from '../../src/core/podcast/infrastructure/podcast_repository_in_memory'
 import ListAllPodcast from '../../src/core/podcast/actions/list_all_podcasts'
 import PodcastObjectMother from '../../src/core/shared/podcast_object_mother';
 

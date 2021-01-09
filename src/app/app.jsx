@@ -1,13 +1,14 @@
 import React from 'react';
-import Layout from './LayoutListPodcast.jsx'
+import LayoutListPodcast from './LayoutListPodcast.jsx'
 import GridPodcast from './GridPodcast.jsx'
+import useGetPodcast from '../../browser/useGetPodcast'
+
 export default function App(props) {
+  //const podcasts = useGetPodcast();
+ 
   return (
-    <React.Fragment>
-      <Layout>
+      <LayoutListPodcast>
         <GridPodcast podcasts={props.podcasts}/>
-      </Layout>
-    </React.Fragment>
-    
+      </LayoutListPodcast>    
   );
 }

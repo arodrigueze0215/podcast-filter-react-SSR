@@ -3,12 +3,12 @@ const path = require('path');
 const miniCss = require('mini-css-extract-plugin');
 
 const config = {
-    target: 'node',
-    mode: 'development',
-    entry: './server/index',
+    target: 'web',
+    mode: 'production',
+    entry: {app:'./browser/index'},
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'server.js'
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -46,6 +46,12 @@ const config = {
     plugins: [
         new miniCss({filename:'assets/style.css'}),        
     ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all',
+            name: "common",
+        },
+    },
 }
 
 
