@@ -15,15 +15,15 @@ server.get('/', async (req, resp) => {
     resp.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     const allPodcast = await getThePodcasts()
     const appString = renderToString(<App podcasts={allPodcast}/>);
-    resp.send(html({
+    resp.end(html({
         body:appString,
         title:'Hello',
         preloadedState:allPodcast
     }))
     
 });
-export default server
 
 async function getThePodcasts() {
     return await listAllPodcast.execute();
 }
+export default server
