@@ -8,7 +8,7 @@ import { listAllPodcast } from './provider'
 
 const server = express();
 server.use('/assets', express.static('public/assets'));
-server.get('/', async (req, resp) => {
+server.get('/public', async (req, resp) => {
     resp.setHeader('Content-Type', 'text/html')
     resp.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
     const allPodcast = await getThePodcasts()
