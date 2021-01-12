@@ -4,11 +4,11 @@ const miniCss = require('mini-css-extract-plugin');
 
 const config = {
     target: 'node',
-    mode: 'development',
-    entry: './server/index',
+    mode: 'production',
+    entry: './api/index',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'server.js'
+        path: path.resolve(__dirname, 'public'),
+        filename: 'index.js'
     },
     module: {
         rules: [

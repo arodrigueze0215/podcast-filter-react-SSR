@@ -11,7 +11,6 @@ const useGetImage = (imgRef) => {
         }
         const observer = lozad(imgRef.current, option)
         observer.observe(imgRef.current)
-        return () => observer.disconnect();
     }, []);
 }
 export default useGetImage;

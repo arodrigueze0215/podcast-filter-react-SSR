@@ -8,8 +8,7 @@ const useGetMp3Audio = (audioRef) => {
             rootMargin: '0px 0px 30px 0px', 
         }
         const observer = lozad(audioRef.current, option)
-        observer.observe(audioRef.current)
-        return () => observer.disconnect();
+        observer.observe(audioRef.current);
     }, []);
 }
 export default useGetMp3Audio;

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run browser\" \"nodemon ./dist/server.js\"",
+    "start": "concurrently \"npm run server\" \"npm run browser\" \"nodemon ./public/index.js\"",
     "server": "webpack",
     "browser": "webpack --config ./webpack.browser.js",
     "test": "jest"
@@ -39,6 +39,7 @@
     "@babel/core": "^7.12.10",
     "@babel/register": "^7.12.10",
     "concurrently": "^5.3.0",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "vercel": "^21.0.1"
   }
 }
