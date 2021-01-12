@@ -8,8 +8,6 @@ import { listAllPodcast } from './provider'
 
 const server = express();
 server.use('/assets', express.static('public/assets'));
-server.use('/', express.static('public/'));
-
 server.get('/', async (req, resp) => {
     resp.setHeader('Content-Type', 'text/html')
     resp.setHeader('Cache-Control', 's-max-age=1, stale-while-revalidate')
