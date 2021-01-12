@@ -1,14 +1,13 @@
 require('webpack');
 const path = require('path');
-const miniCss = require('mini-css-extract-plugin');
 
 const config = {
     target: 'node',
     mode: 'production',
-    entry: './server/index',
+    entry: {index:'./server/index'},
     output: {
         path: path.resolve(__dirname, 'api'),
-        filename: 'index.js'
+        filename: '[name].js'
     },
     module: {
         rules: [
@@ -31,21 +30,9 @@ const config = {
                         name: 'assets/[name].[ext]'
                     }
                 },
-            },
-            {
-                test: /\.styl$/,
-                exclude: /node_modules/,
-                use:[
-                    miniCss.loader,
-                    'css-loader',
-                    'stylus-loader'
-                ] // compiles Styl to CSS
-            },
+            }
         ]
-    },
-    plugins: [
-        new miniCss({filename:'assets/style.css'}),        
-    ],
+    }
 }
 
 

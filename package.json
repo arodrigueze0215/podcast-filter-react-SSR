@@ -2,11 +2,11 @@
   "name": "podcast-filter",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "api/index.js",
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run browser\" \"nodemon ./public/index.js\"",
-    "vercel": "vercel",
-    "build": "concurrently \"npm run server\" \"npm run browser\" \"npm run vercel\"",
+    "start": "concurrently \"npm run server\" \"npm run browser\" \"nodemon ./api/index\"",
+    "build": "concurrently \"npm run server\" \"npm run browser\"",
+    "vercel-build": "node ./api/index",
     "server": "webpack",
     "browser": "webpack --config ./webpack.browser.js",
     "test": "jest"
@@ -19,6 +19,7 @@
     "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@vercel/node": "^1.8.5",
     "babel-loader": "^8.2.2",
     "css-loader": "^5.0.1",
     "date-fns": "^2.16.1",
@@ -43,5 +44,8 @@
     "concurrently": "^5.3.0",
     "node-fetch": "^2.6.1",
     "vercel": "^21.0.1"
+  },
+  "engines": {
+    "node": ">=12.0.0"
   }
 }
