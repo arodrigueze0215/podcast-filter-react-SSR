@@ -21,11 +21,8 @@ server.get('/', async (req, resp) => {
         preloadedState:allPodcast
     }))
     
-})
-server.listen(3000, (err) => {
-    if (err) console.error(err); 
-    console.log("Server listening on PORT", 3000); 
-})
+});
+export default server
 
 async function getThePodcasts() {
     return await listAllPodcast.execute();
