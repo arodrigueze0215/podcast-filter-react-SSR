@@ -5,9 +5,9 @@ const miniCss = require('mini-css-extract-plugin');
 const config = {
     target: 'node',
     mode: 'production',
-    entry: './api/index',
+    entry: './server/index',
     output: {
-        path: path.resolve(__dirname, 'public'),
+        path: path.resolve(__dirname, 'api'),
         filename: 'index.js'
     },
     module: {

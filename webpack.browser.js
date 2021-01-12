@@ -7,7 +7,7 @@ const config = {
     mode: 'production',
     entry: {app:'./browser/index'},
     output: {
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'api'),
         filename: '[name].js'
     },
     module: {
