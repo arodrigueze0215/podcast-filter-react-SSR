@@ -1,12 +1,12 @@
 import React from 'react'
-import emptyPodcastImage from '../../assets/podcast-bg.png'
+import emptyPodcastImage from '../../../assets/podcast-bg.png'
 const Image = React.forwardRef((props, ref) => {
     if (props.picture !== '') {
         return(
-            <div  width="350px" height="325px" className="podcast-image__container">
+            <div  width="350px" height="350px" className="podcast-image__container">
                 <img ref={ref} 
                     width="350px"
-                    height="325px" 
+                    height="350px" 
                     data-img-src={props.picture}
                     src={props.picture}
                     alt={props.title}
@@ -15,10 +15,10 @@ const Image = React.forwardRef((props, ref) => {
         );        
     } else {
         return (
-            <div  width="350px" height="325px" className="podcast-image__container">
+            <div  width="350px" height="350px" className="podcast-image__container">
                 <img 
                     width="350px"
-                    height="325px" 
+                    height="350px" 
                     data-img-src={emptyPodcastImage}
                     src={emptyPodcastImage}
                     alt={props.title}

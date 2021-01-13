@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import '../src/assets/css/style.styl'
+import '../assets/css/style.styl'
+import '../assets/css/desktop.styl'
 import App from '../src/app/app.jsx'
 import { listAllPodcast, findPodcast } from './provider'
 const container = document.getElementById('root');
