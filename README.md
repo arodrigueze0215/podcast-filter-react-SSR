@@ -12,8 +12,8 @@ This is How the strucutre of the project looks like:
 src/
     app/
     core/
-    assets/
-    
+
+assets/    
 test/
 browser/
 server/
