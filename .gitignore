@@ -1,5 +1,5 @@
 node_modules
-api/
+dist/
 public/
 package-lock.json
 .DS_Store

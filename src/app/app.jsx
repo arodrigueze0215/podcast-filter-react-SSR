@@ -5,13 +5,11 @@ import Filter from './Filter.jsx'
 import useFilterPodcast from './effects/useFilterPodcast';
 
 
-export default function App(props) {
-  
+export default function App(props) {  
   const {query, setQuery, filteredPodcast, setFind} = useFilterPodcast(props.podcasts, props.findPodcast);
   const handleFilterOnchange = e => setQuery(e.currentTarget.value);
   const handleClickFindMore = (e) => {
     setFind(query);
-    console.log(e)
   }
   return (
     <React.Fragment>
