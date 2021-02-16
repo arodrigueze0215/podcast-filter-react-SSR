@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 12.x
-        uses: action/setup-node@v1
+        uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: Install and Build
@@ -27,4 +27,4 @@ jobs:
           runs: 3
           uploadArtifacts: true
            # no urls needed, since it uses local folder to scan .html files
-          configPath: './setup/lighthouserc.json'
+          configPath: './.github/workflows/setup/lighthouserc.json'
