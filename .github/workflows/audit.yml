@@ -1,0 +1,30 @@
+name: Lighthouse audit performance
+
+#it going to excecute for each pull request and push on master branch.
+on:
+  pull_request:
+  push:
+    branches:
+    - master
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 12.x
+        use: action/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: Install and Build
+        run: |
+          npm install
+          npm run build
+
+      - name: Run Lighthouse against a static dist dir
+        uses: treosh/lighthouse-ci-action@v7
+        with:
+          runs: 3
+          uploadArtifacts: true
+           # no urls needed, since it uses local folder to scan .html files
+          configPath: './setup/lighthouserc.json'

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev && nodemon ./dist/index",
+    "start:prod": "npm run build && nodemon ./dist/index",
     "dev": "npm run server:dev && npm run browser:dev && npm run export",
     "build": "npm run server:prod && npm run browser:prod && npm run export",
     "vercel-build": "node ./dist/index",
