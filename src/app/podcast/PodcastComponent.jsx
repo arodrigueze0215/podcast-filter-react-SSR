@@ -1,13 +1,12 @@
 import React, { useRef } from 'react';
-import Audio from './Audio.jsx'
 import Image from './Image.jsx'
-import useGetMp3Audio from '../effects/useGetMp3Audio';
 import useGetImage from '../effects/useGetImage';
-export default function PodcastComponent(props) {
-    const { title, description, duration, uploaded_at, picture, url_audio }= props.podcast
-    const audioRef = useRef()
+
+//font awesome
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+ const PodcastComponent = React.memo(props => {
+    const { id, title, description, duration, uploaded_at, picture }= props.podcast
     const imgRef = useRef()
-    useGetMp3Audio(audioRef)
     useGetImage(imgRef)
     return (
         <article className="podcast-item">
@@ -24,11 +23,20 @@ export default function PodcastComponent(props) {
                         <h3 className="podcast-info__duration">{duration.humanize()}</h3>
                     </div>
                     <div className="podcast-info__description">
-                        <p>{description.ellipsis(400) === ''? '-- NO DESCRIPTION --' : description.ellipsis(400)}</p>
+                        <p>{description.ellipsis(100) === ''? '-- NO DESCRIPTION --' : description.ellipsis(100)}</p>
                     </div>
-                    <Audio ref={audioRef} audioSrc={url_audio}/>
+                    <div className="podcast-info__play-container">
+                        <FontAwesomeIcon 
+                            size='2x'
+                            onClick={props.onPlay}
+                            data-id={id}
+                            icon={props.playIcon}
+                        />
+                    </div>
                 </div>
             </div>
         </article>
     )
-}
+}, (prevProps, nextProps) => `${prevProps.podcast.id}` !== nextProps.currentPlay);
+
+export default PodcastComponent;
