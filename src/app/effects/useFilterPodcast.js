@@ -13,7 +13,6 @@ const useFilterPodcast = (listPodcast, findPodcast) => {
 
     useEffect(async () => {
         if(find !== '') {
-            console.log(find)
             const result = await findPodcast.execute(find);
             setFilteredPodcast(result);
         }

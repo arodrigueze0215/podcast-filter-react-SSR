@@ -4,7 +4,13 @@ import FindPodcast from './FindPodcast.jsx'
 export default function GridPodcast(props) {
     
     const podcastList = props.podcasts.map(podcast => {
-        return <PodcastComponent key={podcast.id} podcast={podcast}/>
+        return <PodcastComponent
+            key={podcast.id}
+            podcast={podcast}
+            onPlay={props.onPlay}
+            playIcon={props.playIcon}
+            currentPlay={props.currentPlay}
+        />
     });
     if (podcastList.length > 0) {
         return (

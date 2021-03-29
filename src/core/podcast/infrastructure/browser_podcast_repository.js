@@ -14,7 +14,7 @@ export default class PodcastRepository {
                 audio_clip.description.text || '' ,
                 audio_clip.duration.duration,
                 image,
-                audio_clip.urls !== undefined ? audio_clip.urls.high_mp3: '',
+                audio_clip.url_audio,
                 audio_clip.uploaded_at.date
             )            
         });
