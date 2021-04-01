@@ -5,6 +5,7 @@ This project was made as a learning process of different technologies like:
 - SSR with ExpressJS and React
 - DDD
 - TDD
+- SSG Static site Generator
 
 # Project Structure
 This is How the strucutre of the project looks like:
